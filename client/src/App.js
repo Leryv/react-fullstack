@@ -2,15 +2,21 @@ import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
+import Post from "./pages/Post";
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to="/createpost">Create A Post</Link>
-        <Link to="/">Go Home</Link>
+        <div className="navbar">
+          <Link to="/createpost">Create A Post</Link>
+          <Link to="/">Go Home</Link>
+          <Link to="/post/:id">Go Post</Link>
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/createpost" element={<CreatePost />} />
+          <Route path="/post/:id" element={<Post />} />
         </Routes>
       </BrowserRouter>
     </div>
