@@ -7,7 +7,8 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
+    axios.get(`http://localhost:3001/posts`).then((response) => {
+      // ngambil data dari localhost 3001 allias server
       setListOfPosts(response.data);
     });
   }, []);

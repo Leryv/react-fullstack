@@ -8,6 +8,7 @@ function Post() {
 
   useEffect(() => {
     axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+      // ngambil data dari home dan dijejerin per id
       setPostObject(response.data);
       // console.log(response)
     });
